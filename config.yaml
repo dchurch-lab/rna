@@ -1,0 +1,53 @@
+# User dependant parameters
+## Paired (PE) or single end (SE) reads?
+SEQUENCING_TYPE: "PE" # or "SE"
+# are your reads formatted: xxxx_1.fastq.gz or xxxx_R1.fastq.gz
+STRAND: ["1", "2"] # or ["R1", "R2"]
+
+## Path to reference files for Salmon index
+GENTROME: "path/to/gentrome.fa.gz"
+DECOYS: "path/to/decoys.txt"
+
+## Path to salmon index
+# put the path of the Salmon index where one available,
+# or the path where you want to store one created by the pipeline
+SALMON_INDEX: "path/to/salmon_index"
+
+## Path to reference files for STAR index
+GENOME: "path/to/genome.fa"
+ANNOTATIONS: "path/to/annotation.gtf"
+
+## Path to STAR index
+STAR_INDEX: "path/to/STAR_index"
+
+# Constants for the pipeline (includes sample_sheet and directories structure)
+## Path to samples file
+SAMPLE_SHEET: "sample_sheet.tsv"
+
+## Path to fastq files
+READS: "reads/raw/"
+
+## Path to the trimmed fastq files
+TRIMMED: "reads/trimmed/"
+
+## Path to the fastq files. Remember to create it with the setup file!
+FASTQC: "reads/quality/"
+
+## Path to salmon output
+QUANT: "quants/"
+
+## Path to STAR alignment
+ALIGNMENT: "alignment/"
+
+## Path to alignment quality
+ALIGNMENT_QUAL: "alignment/quality"
+
+## Path to all log files
+LOGS: "logs/"
+
+# Conda enviorenments
+## bwa, samtools, picard, bedtools
+CONDA_ALIGNMENT: "envs/alignment.yml"
+
+## environment with trim_galore, fastqc and multiqc
+CONDA_QUALITY: "envs/quality_check.yml"
